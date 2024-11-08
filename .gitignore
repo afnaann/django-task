@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific files
+db.sqlite3  # Ignore SQLite database
+*.sqlite3-journal
+
+# Ignore .env files to keep sensitive information like secrets and database credentials secure
+.env
+
+# Django migrations
+**/migrations/
+
+# Ignore media/uploads and static files (they are often handled differently in production)
+media/
+staticfiles/
+
+# Ignore cache files
+**/__pycache__/
+*.log
+*.pot
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# VS Code project settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
+
+# macOS and Linux system files
+.DS_Store
+Thumbs.db
+
+# Python packaging and build
+build/
+dist/
+*.egg-info/
+.eggs/
+Pipfile.lock
+
+# Other system files
+*.swp  # Vim swap files
