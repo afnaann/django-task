@@ -20,6 +20,13 @@ class Restaurant(models.Model):
     latitude = models.FloatField(validators=[MinValueValidator(-90),MaxValueValidator(90)])
     longitude = models.FloatField(validators=[MinValueValidator(-180),MaxValueValidator(180)])
     restaurant_type = models.CharField(max_length=2, choices=TypeChoices)
+
+class Staff(models.Model):
+    name = models.CharField(max_length=20)
+    restaurants = models.ManyToManyField(Restaurant)
+    
+    def __str__(self):
+        return self.name
     
 class Sales(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.SET_NULL,null=True)

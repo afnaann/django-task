@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}
+
+    {% for restaurant in restaurants %}
+    <p>{{restaurant.name}}</p> - {% for rating in restaurant.rating_set.all %}
+        <p> {{rating.rating}} </p>
+    {% endfor %}
+    <ul> 
+        {% for sale in restaurant.sales_set.all %}
+        <li>{{sale.income}}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+     {% comment %} {% for res in rest %}
+        <p>{{ res.name }}</p>
+        <ul>
+            {% for rating in res.rating_set.all %}
+                <li>
+                    <span>{{ rating.rating }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %} 
+     {% for res in rate %}
+        <p>{{ res.rating }}</p>
+        <ul>
+            <li>
+                <span>{{ res.restaurant.name }}</span>
+            </li>
+        </ul>
+    {% endfor %}  {% endcomment %}
+{% endblock content %}
